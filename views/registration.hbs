@@ -1,0 +1,19 @@
+<div id="login">
+    <h2>Utwórz Konto</h2>
+
+    <Form action="/registration/register-user" method="POST">
+        <label> <input name="firstname" type="text" placeholder="Imię"> </label>
+        <label> <input name="lastname" type="text" placeholder="Nazwisko"></label>
+        <label> <input name="email" type="email" placeholder="E-mail"></label>
+        <label> <input name="phone" type="tel" placeholder="Telefon"></label>
+        <label> <input name="password" type="password" placeholder="Hasło"></label>
+        <label> <input name="password2" type="password" placeholder="Powtórz hasło"></label>
+        <label> <input type="submit" value="Utwótrz Konto"></label>
+
+        <label style="text-align:left"><a href="/login">Mam już konto</a></label>
+    </Form>
+
+    {{#if error}}
+    <div class="error">{{error}}</div>
+    {{/if}}
+</div>

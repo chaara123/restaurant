@@ -1,0 +1,67 @@
+<div id="menu">
+    <h1>Menu</h1>
+    <table>
+        <tr>
+            <th>lp. </th>
+            <th>Nazwa</th>
+            <th>Cena</th>
+            {{#if isAdmin}}
+            <th></th>
+            <th></th>
+            {{/if}}
+        </tr>
+        {{#each dishes}}
+        <tr>
+            <td>{{@index}}.</td>
+            <td class="input">
+                <h3>{{name}}</h3>
+            </td>
+
+            <td class="input">
+                <h3>{{price}}zł</h3>
+            </td>
+            {{#if ../isAdmin}}
+            <td class="admin-td">
+
+                <button class="editButton" onclick="editMenu(this)" name="id" value="{{_id}}" formaction="/menu/edit-dish">Edytuj</button>
+
+            </td>
+            <td class="admin-td">
+
+                <button class="editButton" onclick="editMenu(this)" type="submit" formaction="/menu/delete-dish" name="id"
+                    value="{{_id}}">Usuń</button>
+
+            </td>
+
+            {{/if}}
+        </tr>
+
+        {{/each}}
+
+        {{#unless dishes}}
+        <tr>
+            <td colspan="5">
+                <center>Brak Menu</center>
+            </td>
+        </tr>
+        {{/unless}}
+
+        <form method="POST">
+            {{#if isAdmin}}
+            <tr>
+                <td></td>
+                <td class="input"><input name="name" type="text"></td>
+                <td class="input"><input name="price" type="text"></td>
+                <td class="admin-td" colspan="2"><button formaction="/menu/add-dish"> Dodaj </button></td>
+            </tr>
+            {{/if}}
+        </form>
+
+        {{#if error}}
+        <td colspan="5" class="error">{{error}}</td>
+        {{/if}}
+    </table>
+
+
+
+</div>

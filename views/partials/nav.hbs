@@ -1,0 +1,20 @@
+<nav>
+    <div class="title a">Restauracja</div>
+    <a href="/">Home</a>
+    <a href="/contact">Kontakt</a>
+    <a href="/menu">Menu</a>
+    {{#if isAdmin}}
+    <a href="/orders">Zamówienia</a>
+    <a href="/admin">Admin</a>
+    {{/if}}
+    <div style="float:right">
+        {{#if isLogged}}
+        <a class="profil-button"><img src="/gfx/person.png" alt="Profil"></a>
+        <div class="a">{{name}}</div>
+        <a href="/logout">Wyloguj się</a>
+        {{else}}
+        <a href="/login">Zaloguj sie</a>
+        {{/if}}
+    </div>
+    <div style="clear:both"></div>
+</nav>

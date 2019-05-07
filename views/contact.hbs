@@ -1,0 +1,41 @@
+<div id="contact">
+    <h1>Kontakt</h1>
+    {{#if isAdmin}}
+    <div class="content">
+        <form method="POST" action="contact/update">
+            <h3>
+                <input placeholder="Imię" type="text" name="firstname" value="{{contact.firstname}}">
+            </h3>
+            <h3>
+                <input placeholder="Nazwisko" type="text" name="lastname" value="{{contact.lastname}}">
+            </h3>
+            <h3>
+                <input placeholder="E-mail" type="email" name="email" value="{{contact.email}}">
+            </h3>
+            <h3>
+                <input placeholder="Telefon" type="tel" name="phone" value="{{contact.phone}}">
+            </h3>
+            <h3>
+                <input placeholder="Adres" type="text" name="street" value="{{contact.street}}">
+            </h3>
+            <input type="hidden" name="id" value="{{contact._id}}">
+            <input type="submit" value="Zapisz">
+
+            {{#if message}}
+            <div style="width:350px; margin-top:10px;" class="message">{{message}}</div>
+            {{/if}}
+        </form>
+
+    </div>
+    {{else}}
+    <div class="content">
+        <h3> {{contact.firstname}} {{contact.lastname}}</h3>
+
+        <h3>E-mail: {{contact.email}}</h3>
+        <h3>Tel: {{contact.phone}}</h3>
+
+        <h3> {{contact.street}}</h3>
+
+    </div>
+    {{/if}}
+</div>

@@ -1,0 +1,113 @@
+<div id="blocker">
+    <div id="wantReserv">
+        <h2>Chcesz zamówić danie teraz?</h2>
+        <h3>Zdecyduj co podamy ci od razu gdy usiądziesz przy stoliku.</h3>
+        <button id="ryes" onclick="reservDishNow()">Zamawiam teraz</button>
+        <button id="rno" onclick="reservDishAfter()">Zamówię na miejscu</button>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="reservation">
+
+    <h1>Rezerwacje</h1>
+    <div class="nextTo">
+
+
+        <table>
+            <tr>
+                <td colspan="2">Stoliki</td>
+            </tr>
+            <tr>
+                <th>Numer</th>
+                <th>Miejsca</th>
+
+            </tr>
+
+            {{#if error}}
+            <tr>
+                <td colspan="2" style="padding:0">
+                    <div style="width:100%" class="error">{{error}}</div>
+                </td>
+            </tr>
+            {{/if}}
+            {{#each tables}}
+
+
+            {{#if ../isAdmin}}
+            <tr class="editTable {{#if selected}}selected{{/if}}">
+                <td colspan="2">
+                    <form method="POST">
+                        <input type="number" name="number" value="{{number}}">
+                        <input type="number" name="seats" value="{{seats}}">
+                        <input type="hidden" name="id" value="{{_id}}">
+                        <button type="submit" formaction="/edit-table">Zapisz</button>
+                        <button type="submit" formaction="/delete-table">Usuń</button>
+                        <button type="submit" formaction="/">Wybierz</button>
+                    </form>
+                </td>
+
+            </tr>
+            {{else}}
+
+            <tr class="selectTable {{#if selected}}selected{{/if}}" onclick="selectTable('{{_id}}')">
+                <td>{{number}}</td>
+                <td>{{seats}}</td>
+            </tr>
+            {{/if}}
+            {{/each}}
+
+            {{#if isAdmin}}
+            <tr class="editTable">
+                <td colspan="2">
+                    <form method="POST" action="/add-table">
+                        <input type="number" name="number" value="{{number}}">
+                        <input type="number" name="seats" value="{{seats}}">
+                        <button style="width:250px" type="submit">Dodaj</button>
+                    </form>
+                </td>
+            </tr>
+            {{/if}}
+        </table>
+    </div>
+
+    <div class="nextTo">
+        <table id="reservationTab">
+            <tr>
+                <td colspan="3">Rezerwacje</td>
+            </tr>
+            {{#if isSelected}}
+            <tr>
+                <th colspan="3">
+                    <form method="POST">
+                        <button {{#unless prev}} style="visibility:hidden" {{/unless}} formaction="/" name="day"
+                            value="-1">Wstecz</button>
+                        {{date}}
+                        <button {{#unless next}} style="visibility:hidden" {{/unless}} formaction="/" name="day"
+                            value="1">Przód</button>
+                        <input type="hidden" name="id" value="{{tableId}}">
+                        <input type="hidden" name="last" value="{{last}}">
+                    </form>
+                </th>
+            <tr>
+                <td>
+                    <form method="POST">
+                        {{{renderCalendar reservations date open close email isAdmin}}}
+                        <input type="hidden" name="tableNumber" value="{{tableNumber}}">
+                        <input type="hidden" name="last" value="{{last}}">
+                        <input type="hidden" name="tableId" value="{{tableId}}">
+                        <input type="hidden" name="date" value="{{date}}">
+                    </form>
+                </td>
+            </tr>
+            </tr>
+            {{else}}
+            <tr>
+                <td>Wybierz Stolik</td>
+            </tr>
+
+            {{/if}}
+        </table>
+    </div>
+    <img src="/gfx/plan_restauracji.jpg" alt="plan">
+</div>

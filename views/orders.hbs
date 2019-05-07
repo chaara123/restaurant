@@ -1,0 +1,36 @@
+<div id="ordersDiv">
+    <h1>Zamówienia</h1>
+
+    <div class="content">
+        {{#each orders}}
+        {{#if reservations.menuOrder.total}}
+        <table border="1">
+            <tr>
+                <td colspan="3">Stolik: {{number}} &nbsp;&nbsp;&nbsp;&nbsp; Data: {{reservations.date}}&nbsp;
+                    {{reservations.time}}:00
+                    &nbsp;&nbsp;&nbsp;&nbsp; Kilent: {{reservations.user.firstname}} {{reservations.user.lastname}}</td>
+            </tr>
+            <tr>
+                <th>Nazwa</th>
+                <th>Ilość</th>
+                <th>Cena z szt.</th>
+            </tr>
+
+
+            {{#each reservations.menuOrder.orders}}
+            <tr>
+                <td>{{name}} </td>
+                <td>{{amount}}</td>
+                <td>{{price}}</td>
+            </tr>
+
+            {{/each}}
+            <tr>
+                <td colspan="2"></td>
+                <td>Suma: {{reservations.menuOrder.total}}zł </td>
+            </tr>
+        </table>
+        {{/if}}
+        {{/each}}
+    </div>
+</div>

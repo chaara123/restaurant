@@ -1,0 +1,42 @@
+<div id="admin">
+    <h1>Panel Administracyjny</h1>
+
+    <div class="content">
+        <div class="config">
+            <form method="POST" action="/admin/config">
+                <label><input placeholder="" type="number" name="open" value="{{open}}"> Otwarcie</label>
+                <label><input placeholder="" type="number" name="close" value="{{close}}"> Zamknięcie</label>
+                <label><input placeholder="" type="number" name="maxDayAhead" value="{{maxDayAhead}}"> Rezerwacji do
+                    Przodu</label>
+                <input type="hidden" name="id" value="{{id}}">
+                <button type="submit">Zapisz</button>
+            </form>
+        </div>
+
+        <table border="1">
+            <tr>
+                <td colspan="6">Użytkownicy</td>
+            </tr>
+            <tr>
+                <th>lp.</th>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Email</th>
+                <th>Telefon</th>
+                <th></th>
+            </tr>
+            {{#each users}}
+            <tr>
+                <td>{{@index}}</td>
+                <td>{{firstname}}</td>
+                <td>{{lastname}}</td>
+                <td>{{email}}</td>
+                <td>{{phone}}</td>
+                <td class="button">
+                    <form method="POST"><button formaction="/admin/delete-user" name="id" value="{{_id}}">Usuń</button></form>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>

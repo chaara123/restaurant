@@ -1,0 +1,70 @@
+<div id="menu">
+    <h1>Zamów Danie</h1>
+    <table id="menu-table">
+        <tr>
+            <th>lp. </th>
+            <th>Nazwa</th>
+            <th>Cena</th>
+            <th></th>
+        </tr>
+        {{#each dishes}}
+        <tr>
+            <td>{{@index}}.</td>
+            <td class="input">
+                <h3>{{name}}</h3>
+            </td>
+
+            <td class="input">
+                <h3>{{price}}zł</h3>
+            </td>
+
+            <td class="admin-td">
+
+                <button class="editButton" onclick='addDish({{@index}},"{{_id}}")'>Dodaj</button>
+
+            </td>
+
+
+        </tr>
+
+        {{/each}}
+
+        {{#unless dishes}}
+        <tr>
+            <td colspan="5">
+                <center>Brak Menu</center>
+            </td>
+        </tr>
+        {{/unless}}
+
+        <form method="POST">
+
+        </form>
+
+        {{#if error}}
+        <td colspan="5" class="error">{{error}}</td>
+        {{/if}}
+    </table>
+
+    <table id="orders" style="margin-top:50px;">
+
+
+    </table>
+
+    <div class="payment">
+        <h3>
+            Data: {{reservData.date}}&nbsp; {{reservData.time}}:00 &nbsp;&nbsp;&nbsp;Numer Stolika:
+            {{reservData.tableNumber}}
+        </h3>
+        <form method="POST" action="/order">
+            <input type="submit" value="Zamawiam" id="sbt">
+            <input type="hidden" name="order" value="" id="send">
+            <input type="hidden" name="tableNumber" value="{{reservData.tableNumber}}">
+            <input type="hidden" name="last" value="{{reservData.last}}">
+            <input type="hidden" name="tableId" value="{{reservData.tableId}}">
+            <input type="hidden" name="date" value="{{reservData.date}}">
+            <input type="hidden" name="time" value="{{reservData.time}}">
+        </form>
+        <div style="clear:both"></div>
+    </div>
+</div>

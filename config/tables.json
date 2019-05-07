@@ -1,0 +1,42 @@
+[
+    {
+        "number": 1,
+        "seats": 4,
+        "reservations": []
+    },
+    {
+        "number": 2,
+        "seats": 4,
+        "reservations": []
+    },
+    {
+        "number": 3,
+        "seats": 4,
+        "reservations": []
+    },
+    {
+        "number": 4,
+        "seats": 4,
+        "reservations": []
+    },
+    {
+        "number": 5,
+        "seats": 4,
+        "reservations": []
+    },
+    {
+        "number": 6,
+        "seats": 4,
+        "reservations": []
+    },
+    {
+        "number": 7,
+        "seats": 5,
+        "reservations": []
+    },
+    {
+        "number": 8,
+        "seats": 5,
+        "reservations": []
+    }
+]

@@ -1,0 +1,420 @@
+#reservation h1 {
+    padding: 40px;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    background: rgb(9, 159, 228);
+    color: white;
+}
+
+#reservation table {
+    width: 400px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    color: white;
+}
+
+#reservation table tr:first-child {
+    font-size: 20px;
+    font-weight: 500;
+    cursor: auto;
+}
+
+#reservation table tr:nth-child(2) {
+    cursor: auto;
+}
+
+#reservation th {
+    background: rgb(9, 159, 228);
+    padding: 20px;
+}
+
+#reservation table tr {
+    background: rgb(75, 75, 75);
+    border: 5px solid white;
+}
+
+#reservation table .selectTable:hover {
+    transition: 0.5s;
+    background: rgba(75, 75, 75, 0.781);
+    cursor: pointer;
+}
+
+#reservation table td {
+    padding: 15px;
+}
+
+#reservation .nextTo {
+    float: left;
+    width: 60%;
+}
+
+#reservation>:nth-child(2) {
+    width: 40%;
+}
+
+#reservation #reservationTab {
+    width: 800px;
+}
+
+#reservation table tr.editTable {}
+
+#reservation table .editTable td {
+    padding: 5px;
+}
+
+#reservation table tr.editTable input {
+    width: 58px;
+    height: 50px;
+    text-align: center;
+    font-size: 15px;
+    outline: none;
+    padding-left: 15px;
+}
+
+#reservation table tr.editTable button {
+    height: 50px;
+    width: 80px;
+    font-size: 15px;
+    color: white;
+    background: rgba(11, 216, 107, 0.911);
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.5s;
+    border: 1px solid;
+    padding: 5px;
+}
+
+#reservation table tr.editTable button:hover {
+    color: rgba(11, 216, 107, 0.911);
+    background: white;
+    border-color: rgba(11, 216, 107, 0.911);
+}
+
+#reservation .selected {
+    font-weight: 1000;
+    background: rgba(11, 216, 107, 0.911);
+}
+
+#reservation .hour-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+#reservation .hour-container .hour {
+    height: 100px;
+    padding: 20px;
+    background: rgba(11, 216, 107, 0.911);
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid rgba(11, 216, 107, 0.911);
+    border-radius: 3px;
+    color: white;
+}
+
+#reservation .hour-container .occupied {
+    background: red;
+    border: 2px solid red;
+}
+
+#reservation .hour-container .my {
+    background: rgb(203, 206, 41);
+    border: 2px rgb(203, 206, 41);
+}
+
+#reservation th {}
+
+#reservation th button {
+    color: white;
+    margin: 0 30px;
+    width: 70px;
+    padding: 10px;
+    border: 2px solid rgba(11, 216, 107, 0.911);
+    border-radius: 3px;
+    background: rgba(11, 216, 107, 0.911);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#reservation th button:hover {
+    color: rgba(11, 216, 107, 0.911);
+    background: white;
+    border-color: rgba(11, 216, 107, 0.911);
+}
+
+.map {
+    display: flex;
+}
+
+#blocker {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #29292993;
+    display: none;
+}
+
+#wantReserv {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    width: 500px;
+    height: 290px;
+    padding: 40px;
+    margin: auto;
+    background-color: rgb(9, 159, 228);
+    color: white;
+    border-radius: 4px;
+    display: none;
+}
+
+#wantReserv h3 {
+    padding: 10px 0;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+#wantReserv button#ryes {
+    color: white;
+    background: rgba(11, 216, 107, 0.911);
+    padding: 20px;
+    border: 2px solid rgba(11, 216, 107, 0.911);
+    padding: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: calc(50% - 10px);
+    float: left;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+#wantReserv button#ryes:hover {
+    background: white;
+    color: rgba(11, 216, 107, 0.911);
+    border-color: rgba(11, 216, 107, 0.911);
+}
+
+#wantReserv button#rno {
+    padding: 20px;
+    border: 2px solid red;
+    background: red;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    width: calc(50% - 10px);
+    float: right;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+#wantReserv button#rno:hover {
+    background: white;
+    color: red;
+    border-color: red;
+}
+
+#ordersDiv h1 {
+    padding: 40px;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    background: rgb(9, 159, 228);
+    color: white;
+}
+
+#ordersDiv .content {
+    min-width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+#ordersDiv table {
+    min-width: 600px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    color: white;
+}
+
+#ordersDiv table tr:first-child {
+    font-size: 17px;
+    font-weight: 500;
+    cursor: auto;
+}
+
+#ordersDiv table tr:nth-child(2) {
+    cursor: auto;
+}
+
+#ordersDiv th {
+    background: rgb(9, 159, 228);
+    padding: 20px;
+}
+
+#ordersDiv table tr {
+    background: rgb(75, 75, 75);
+    border: 5px solid white;
+}
+
+#ordersDiv table .selectTable:hover {
+    transition: 0.5s;
+    transform: scale(0.98);
+    cursor: pointer;
+}
+
+#ordersDiv table td {
+    padding: 15px;
+}
+
+#ordersDiv table td.button {
+    padding: 0px;
+}
+
+#ordersDiv table button {
+    height: 50px;
+    width: 90px;
+    font-size: 15px;
+    color: white;
+    background: rgba(11, 216, 107, 0.911);
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.5s;
+    border: 1px solid;
+    padding: 5px;
+}
+
+#ordersDiv table button:hover {
+    color: rgba(11, 216, 107, 0.911);
+    background: white;
+    border-color: rgba(11, 216, 107, 0.911);
+}
+
+#ordersDiv .config {
+    width: 600px;
+    margin: 0 auto;
+    background: rgb(75, 75, 75);
+    padding: 20px;
+    text-align: center;
+}
+
+#ordersDiv .config label {
+    text-align: left;
+    margin: 10px auto;
+    display: block;
+    width: 300px;
+    color: white;
+}
+
+#ordersDiv .config input {
+    margin-right: 30px;
+    padding: 10px;
+    width: 80px;
+    outline: none;
+}
+
+#ordersDiv .config button {
+    margin-top: 20px;
+    height: 50px;
+    width: 300px;
+    font-size: 15px;
+    color: white;
+    background: rgba(11, 216, 107, 0.911);
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.5s;
+    border: 1px solid rgba(11, 216, 107, 0.911);
+    padding: 5px;
+}
+
+#ordersDiv .config button:hover {
+    color: rgba(11, 216, 107, 0.911);
+    background: white;
+    border-color: rgba(11, 216, 107, 0.911);
+}
+
+.payment {
+    width: 790px;
+    margin: 0 auto;
+    color: white;
+}
+
+.payment h3 {
+    width: 535px;
+    height: 65px;
+    padding: 20px;
+    float: left;
+    background: rgba(11, 216, 107, 0.911);
+    border-radius: 4px;
+    font-size: 17px;
+}
+
+.payment #sbt {
+    display: block;
+    float: right;
+    padding: 16px;
+    cursor: pointer;
+    border: 2px solid rgb(9, 159, 228);
+    background: rgb(9, 159, 228);
+    color: white;
+    font-size: 20px;
+    border-radius: 4px;
+    width: 250px;
+    height: 65px;
+    font-weight: 800;
+    transition: 0.5s;
+}
+
+.payment #sbt:hover {
+    border-color: rgb(9, 159, 228);
+    color: rgb(9, 159, 228);
+    background: white;
+}
+
+.oamount {
+    padding: 0 !important;
+    height: 50px;
+    width: 100px;
+}
+
+.oamount>* {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.odelete {
+    padding: 0 !important;
+    width: 150px;
+}
+
+.odelete * {
+    height: 50px;
+    width: 150px;
+    font-size: 15px;
+    color: white;
+    background: rgba(11, 216, 107, 0.911);
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.5s;
+    border: 1px solid;
+    padding: 5px;
+}
+
+.odelete>*:hover {
+    color: rgba(11, 216, 107, 0.911);
+    background: white;
+    border-color: rgba(11, 216, 107, 0.911);
+}
+
+.osuma {
+    width: 100px !important;
+}
